@@ -27,7 +27,7 @@ class TagController {
     const { title } = request.all();
     const article = await Article.find( id );
     const tagsID = await Tag.query().where('title','like',title).fetch();
-    const tid=tagsID.id;
+    const tid=tagsID;
     await article.tags().attach( tid );
     // await articleids.tag().create(tag);
     return tagsID;
