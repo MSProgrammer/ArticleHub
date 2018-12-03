@@ -4,10 +4,12 @@
 const Model = use('Model')
 
 class Comment extends Model {
+    articles(){
+     return this.belongsToMany('App/Models/Article')
+   }
   
-  article() {
-    return this.belongsTo('App/Models/Article').pivotTable('ArticleComment')
-  }
 }
+
+
 
 module.exports = Comment

@@ -16,8 +16,7 @@ class Article extends Model {
     return this.belongsToMany('App/Models/Tag');
   }
  
-
- comments(){
+  comments(){
     return this.belongsToMany('App/Models/Comment')
   }
 }

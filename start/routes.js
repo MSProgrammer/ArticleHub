@@ -25,7 +25,7 @@ Route.group(() => {
   Route.post('auth/login', 'UserController.login');
   Route.post('auth/register', 'UserController.register');
   Route.get('auth/logout', 'UserController.logout');
-  Route.post('articles/comment/:id', 'PostController.articleComment');
+  Route.patch('articles/comment/:id', 'CommentController.addComment');
   Route.get('cat/index', 'CatController.index'); // cat index
   Route.get('tag/index', 'TagController.index'); 
 }).prefix('api');

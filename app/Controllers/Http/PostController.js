@@ -13,6 +13,7 @@ class PostController {
     if (user.permission_mode !== 1) {
       return await Article.query().where('is_permit', '=', true).fetch();
     }
+    return await Article.all();
   }
 
   async create({ auth, request }) {
@@ -24,7 +25,7 @@ class PostController {
       cat_id,
       tag_title
     } = request.all();
-    console.log('article will be :', title, body, tag_title);
+    // console.log('article will be :', title, body, tag_title);
     const post = new Article();
     post.fill({
       title,
