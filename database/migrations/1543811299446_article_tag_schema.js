@@ -10,7 +10,7 @@ class ArticleTagSchema extends Schema {
       table.integer('tag_id');
     })
   }
-
+              
   down () {
     this.drop('article_tag')
   }
