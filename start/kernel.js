@@ -55,6 +55,10 @@ const serverMiddleware = [
   'Adonis/Middleware/Cors'
 ]
 
+const aceProviders = [
+  'adonis-vow-mocha/providers/VowMochaProvider'
+]
+
 Server
   .registerGlobal(globalMiddleware)
   .registerNamed(namedMiddleware)

@@ -4,10 +4,11 @@
 const Model = use('Model')
 
 class Tag extends Model {
-  article() {
-    return this.belongsTo('App/Models/Article').pivotTable('TagArticle')
+  articles(){
+      return this.belongsToMany('App/Models/Article')
   }
-
+ 
+ 
 }
 
 module.exports = Tag

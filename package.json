@@ -28,7 +28,9 @@
     "mysql": "^2.16.0",
     "sqlite3": "^4.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "adonis-vow-mocha": "^2.3.0"
+  },
   "autoload": {
     "App": "./app"
   }

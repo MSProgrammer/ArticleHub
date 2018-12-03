@@ -4,7 +4,7 @@ const Article = use('App/Models/Article');
 const Permit = use('App/Common/Authorization');
 const Tag = use('App/Models/Tag');
 const Cat = use('App/Models/Cat');
-const Tg_ar=use('App/Models/TagArtcile')
+
 
 class PostController {
 
@@ -16,30 +16,29 @@ class PostController {
   }
 
   async create({ auth, request }) {
-    const user = await auth.getUser();
+    const user =await auth.getUser();
     const {
       title,
       body,
       comment,
       cat_id,
-      tag_id
+      tag_title
     } = request.all();
-    console.log('article will be :', title, body, comment);
+    console.log('article will be :', title, body, tag_title);
     const post = new Article();
     post.fill({
       title,
       body,
       comment,
-      cat_id,
-      tag_id
+      cat_id
     });
-    const tgAR=new Tg_ar({
-      post_id,
-      tag_id
-    });
+  
+   
+    await user.articles().save(post);
+   
+    //await articles().save(tgAR);
 
-    
-    await user.articles().saveMany([post,tgAR]);
+
     return post;
   }
 

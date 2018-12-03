@@ -27,12 +27,13 @@ Route.group(() => {
   Route.get('auth/logout', 'UserController.logout');
   Route.post('articles/comment/:id', 'PostController.articleComment');
   Route.get('cat/index', 'CatController.index'); // cat index
+  Route.get('tag/index', 'TagController.index'); 
 }).prefix('api');
 
 Route.group(() => {
   Route.get('articles/index', 'PostController.index');
   Route.post('articles/create', 'PostController.create'); // localhost:3333/api/articles/create?q=sag
-  Route.post('tag/create', 'TagController.create');
+  Route.patch('tag/create/articles/:id', 'TagController.create');
   Route.post('cat/create', 'CatController.create'); // cat Create
 }).middleware(['admin', 'modratore']).prefix('api');
 
@@ -40,4 +41,5 @@ Route.group(() => {
   Route.get('users/index', 'UserController.index');
   Route.patch('users/edit/:id', 'UserController.edit');
   Route.patch('articles/edit/:id', 'PostController.edit');
+  Route.patch('articles/index', 'PostController.edit');
 }).middleware(['admin']).prefix('api');

@@ -8,18 +8,16 @@ class Article extends Model {
     return this.belongsTo('App/Models/Cat');
   }
   user() {
-    return this.belongsTo('App/Models/User')
+    return this.belongsTo('App/Models/User');
   }
-  tags() {
-    return this.hasMany('App/Models/Tag')
+
+
+  tags () {
+    return this.belongsToMany('App/Models/Tag');
   }
-  comments() {
-    return this.hasMany('App/Models/Comment')
-  }
-  tags(){
-    return this.belongsToMany('App/Models/Tag')
-  }
-  comments(){
+ 
+
+ comments(){
     return this.belongsToMany('App/Models/Comment')
   }
 }

@@ -4,6 +4,7 @@
 const Model = use('Model')
 
 class Comment extends Model {
+  
   article() {
     return this.belongsTo('App/Models/Article').pivotTable('ArticleComment')
   }
