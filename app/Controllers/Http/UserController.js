@@ -1,7 +1,7 @@
 'use strict'
 
 const User = use('App/Models/User');
-const Permit = use('App/Common/Authorization');
+const Permission = use('App/Common/Authorization');
 
 class UserController {
   //if the user incoming is Admin 
@@ -23,9 +23,9 @@ class UserController {
       username: email,
       permission_mode,
     });
+
     return user;
   }
-
 
   async login({ request, auth }) {
     const {
@@ -42,6 +42,15 @@ class UserController {
     return 'logedOut';
   }
 
+  async permissionChange({ params }) {
+    const { id } = params;
+    console.log(id);
+    const user = await User.find(id);
+    await user.roles()
+      .attach(1);
+    return User.fetch();
+  }
+
   async edit({ request, params }) {
     const {
       email,
@@ -56,6 +65,15 @@ class UserController {
     return {
       "user": user.id,
     };
+  }
+
+  async createRole({ request }) {
+    const {
+      slug,
+      name,
+      description
+    } = request.all();
+
   }
 
 }

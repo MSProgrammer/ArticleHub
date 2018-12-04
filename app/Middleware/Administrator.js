@@ -3,17 +3,11 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-
 const invalidAccess = use('App/Exceptions/InvalidAccessException');
+
 class Administrator {
-  /**
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Function} next
-   */
   async handle({
-    auth,
-    response
+    auth
   }, next) {
     try {
       await auth.check();

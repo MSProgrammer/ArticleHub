@@ -5,19 +5,11 @@ const {
 } = require('@adonisjs/generic-exceptions')
 
 class InvalidAccessException extends LogicalException {
-  /**
-   * Handle this exception by itself
-   */
-  handle(error, {
+  handle({
     response
   }) {
-
-    // return response.status(403).json({
-    //   error:'Invalid Permission To resource',
-    // });
     console.log('invalid');
     return response.redirect('/');
-
   }
 }
 
