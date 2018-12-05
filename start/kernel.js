@@ -39,9 +39,9 @@ const namedMiddleware = {
   auth: 'Adonis/Middleware/Auth',
   is: 'Adonis/Acl/Is',
   can: 'Adonis/Acl/Can',
-  guest: 'Adonis/Middleware/AllowGuestOnly',
-  administrator: 'App/Middleware/Administrator',
-  modratore: 'App/Middleware/Modratore'
+  // guest: 'Adonis/Middleware/AllowGuestOnly',
+  // administrator: 'App/Middleware/Administrator',
+  // modratore: 'App/Middleware/Modratore'
 }
 
 /*

@@ -32,6 +32,11 @@ class User extends Model {
    * @return {Object}
    */
 
+  // acces via user.roles().attach(...)
+  roles() {
+    return this.belongsToMany('App/Models/Role');
+  }
+
   tokens() {
     return this.hasMany('App/Models/Token')
   }
@@ -40,9 +45,9 @@ class User extends Model {
     return this.hasMany('App/Models/Article')
   }
 
-  permissions() {
-    return this.hasMany('App/Models/Permission')
-  }
+  // roles() {
+  //   return this.hasMany('App/Models/Role')
+  // }
 
   static get traits() {
     return [
