@@ -26,3 +26,6 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+
+Our API Do something On Articles So Like : Manage Theme , Apply theme and Articles Approved With Admin Permit and It`s Published by him 
